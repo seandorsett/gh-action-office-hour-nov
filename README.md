@@ -68,7 +68,7 @@ outputs; it cannot edit code or merge PRs.
 
 ## Presenter resources
 
+- [PowerPoint deck](PRESENTATION.md)
 - [Runbook and talking notes](PRESENTER-RUNBOOK.md)
 - [Announcement catalogue and primary sources](UPDATE-CATALOG.md)
-- Rehearsal results will be recorded after execution; source availability is
-  not evidence of a successful workflow.
+- [Rehearsal results and fallback runs](REHEARSAL.md)

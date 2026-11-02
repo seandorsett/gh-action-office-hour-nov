@@ -50,8 +50,9 @@ a suitable design. Include speaker notes, demo cues, timing, prerequisites,
 source references, fallback instructions, and a final 10-minute Q&A section.
 
 Target repository: https://github.com/seandorsett/gh-action-office-hour-nov
-Created as private with the user's approval. Workflow implementation and
-presentation production are in progress.
+Created as private with the user's approval. Selected workflow sources,
+generated lockfiles and presenter materials are published. See REHEARSAL.md
+for observed execution outcomes and PRESENTATION.md for the generated deck.
 
 ## Primary sources
 
