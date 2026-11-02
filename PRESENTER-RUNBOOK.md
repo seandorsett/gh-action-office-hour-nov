@@ -72,6 +72,8 @@ Launch **03 - Safe event context** manually. Point out it is a manual event,
 not a simulated pull request. For a real comparison, use GitHub's file editor
 to create a harmless README-only branch and open a PR through the web UI.
 Inspect both pull_request and pull_request_target runs and their refs/SHAs.
+The existing rehearsal PR #1 and both saved runs are linked in REHEARSAL.md,
+so no new PR is necessary if time is short.
 
 The target workflow checks out nothing, has no custom secrets or write access,
 and never runs PR-supplied code. Do not add a head checkout to "make it real."
