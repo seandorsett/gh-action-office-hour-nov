@@ -1,0 +1,43 @@
+name: 00 - Prepare generated demo files
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Install versioned generators
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh extension install github/gh-aw --pin v1.0.1
+          gh extension install github/gh-actions-lock --pin v0.4.1
+      - name: Compile agent and lock demo action dependencies
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh aw compile
+          gh actions-lock .github/workflows/01-lockfiles.yml
+          gh actions-lock --verify .github/workflows/01-lockfiles.yml
+          mkdir -p .generated/.github/workflows
+          cp .github/workflows/repo-status.lock.yml .generated/.github/workflows/
+          cp .github/workflows/actions.lock .generated/.github/workflows/
+          cp .github/workflows/01-lockfiles.yml .generated/.github/workflows/
+          {
+            echo '## Generated files ready for review'
+            echo 'Review and commit the artifact files to the default branch before presenting.'
+            echo 'No repository files were pushed by this preparation workflow.'
+            echo 'The agentic *.lock.yml is compiled YAML; actions.lock pins action dependencies. They are different mechanisms.'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: generated-demo-files
+          path: .generated/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30

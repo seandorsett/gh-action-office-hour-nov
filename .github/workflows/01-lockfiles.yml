@@ -1,0 +1,62 @@
+name: 01 - Workflow dependency lockfiles
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Install versioned verifier
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh extension install github/gh-actions-lock --pin v0.4.1
+      - name: Verify the committed lockfile and provenance
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test -f .github/workflows/actions.lock
+          gh actions-lock --verify .github/workflows/01-lockfiles.yml
+          {
+            echo '## Readable references, locked commits'
+            echo 'The checkout action above executed before this inspection step.'
+            echo '```yaml'
+            cat .github/workflows/actions.lock
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Demonstrate offline coverage rejection without changing GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path(".github/workflows/01-lockfiles.yml")
+          text = path.read_text()
+          old = "      - name: Install versioned verifier"
+          assert old in text
+          text = text.replace(old, "      - uses: actions/setup-node@v6\n" + old, 1)
+          path.write_text(text)
+          PY
+          set +e
+          gh actions-lock --verify-local .github/workflows/01-lockfiles.yml > drift.log 2>&1
+          status=$?
+          set -e
+          cat drift.log
+          if [ "$status" -eq 0 ]; then
+            echo '::error::Expected coverage verification to reject the newly added, unlocked dependency.'
+            exit 1
+          fi
+          if ! grep -Eiq 'missing|unlocked|not.locked|not.in.lockfile|uncovered|coverage' drift.log; then
+            echo '::error::Verifier failed for an unexpected reason; inspect drift.log.'
+            exit 1
+          fi
+          {
+            echo '## Controlled drift detected'
+            echo 'Added setup-node only in the temporary runner checkout; verification rejected its missing lock entry.'
+            echo 'This is a CLI coverage check, not a demonstration of a server-side policy block.'
+            echo 'No branch or lockfile was changed on GitHub.'
+          } >> "$GITHUB_STEP_SUMMARY"

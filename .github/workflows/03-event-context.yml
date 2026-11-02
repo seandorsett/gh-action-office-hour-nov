@@ -1,0 +1,43 @@
+name: 03 - Safe event context
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Inspect allowlisted event metadata without checkout
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_REF: ${{ github.ref }}
+          EVENT_SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text())
+          pr = event.get("pull_request") or {}
+          rows = {
+              "event": os.environ["EVENT_NAME"],
+              "ref": os.environ["EVENT_REF"],
+              "sha": os.environ["EVENT_SHA"],
+              "repository private": str(event.get("repository", {}).get("private")),
+              "head SHA": str(pr.get("head", {}).get("sha", "not a PR event")),
+              "base SHA": str(pr.get("base", {}).get("sha", "not a PR event")),
+          }
+          text = "## Safe event context\n\n```json\n" + json.dumps(rows, indent=2) + "\n```\n"
+          text += "\nNo checkout, fork code, secrets or write permissions are used.\n"
+          text += "\nworkflow_dispatch is not a simulation of a pull request event.\n"
+          text += "\nPrivate repository: the PUBLIC-repository default block does not apply here.\n"
+          text += "\nPublic brownouts: Nov 9 and 16, 2026, 16:00-18:00 UTC. Permanent enforcement: Dec 2.\n"
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as summary:
+              summary.write(text)
+          print(text)
+          PY
