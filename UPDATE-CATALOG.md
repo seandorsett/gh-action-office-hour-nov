@@ -4,9 +4,10 @@ Research snapshot: November 2, 2026.
 Window: October 4-November 2, 2026, inclusive (30 calendar dates).
 This is not a forecast of announcements between November 3 and the session.
 
-Session constraint: 50 minutes presentation and demos, followed by 10 minutes Q&A.
-Selected topics: 1, 2, 3, 5 and 6. Demo feasibility below is an assessment,
-not evidence of an implemented or successfully executed demo.
+Session constraint: 60 minutes total. The revamped deck covers only updates
+1 and 2, with 5 minutes for update 1, 40 minutes for update 2, 10 minutes Q&A,
+and 5 minutes for opening. Demo feasibility below is an assessment, not evidence
+of a successfully executed agent inference.
 
 ## Topic selection
 
@@ -20,13 +21,9 @@ not evidence of an implemented or successfully executed demo.
 | 6 | Actions blob-storage endpoints added to Meta API, October 22 | Partial - API and job-summary demonstration | Fetch current Meta API data and publish a job summary for allowlist review. | New inclusive host ranges: productionresultssa30-49 and productionresultssa100-199 under blob.core.windows.net. A hosted job does not prove a corporate firewall is configured correctly or uses a particular new host. Pair with topic 5. | 3 minutes |
 | 7 | Actions runner v2.338.0 October 6; v2.338.1 prerelease October 22; v2.338.2 October 26 | Limited - mostly operational briefing | Inspect the runner version shown in job setup and explain internal Node 24 use and connectivity probes. | Progressive rollout; a GitHub-hosted workflow cannot control runner version or demonstrate self-hosted service internals. Internal Node 24 is not the same as the application Node version selected by setup-node. Release notes also list self-repository action manifest references; do not promise a live demo without further verification. | 3 minutes |
 
-Suggested selection: 1, 2, 3, 5 and 6.
-Suggested agenda: opening 4 minutes; lockfiles 12; agentic workflows 15;
-security policy update 8; combined network readiness 7; takeaways/buffer 4;
+Selected for the revamped deck: updates 1 and 2 only.
+Agenda: opening 5 minutes; lockfiles 5; Agentic Workflows deep dive 40;
 Q&A 10. Total: 60 minutes.
-
-An alternative without AI inference uses topics 1, 3, 4, 5 and 6, with the
-remaining time allocated to deeper lockfile and policy walkthroughs.
 
 ## Demo delivery requirements
 
@@ -44,10 +41,9 @@ remaining time allocated to deeper lockfile and policy walkthroughs.
 
 ## Presentation requirements
 
-Use a suitable original design: high-contrast dark backgrounds, purple accents,
-and readable workflow examples. The user has no template and approved choosing
-a suitable design. Include speaker notes, demo cues, timing, prerequisites,
-source references, fallback instructions, and a final 10-minute Q&A section.
+The user has no template and approved a suitable design. The existing deck was
+revamped to focus on updates 1 and 2 and the requested timings. See
+PRESENTATION.md for the current deck link and remaining live-inference caveat.
 
 Target repository: https://github.com/seandorsett/gh-action-office-hour-nov
 Created as private with the user's approval. Selected workflow sources,

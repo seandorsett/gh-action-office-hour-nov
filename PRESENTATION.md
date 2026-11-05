@@ -4,9 +4,11 @@ DXC Office Hour: **November 10, 2026**.
 
 [Open GitHub Actions November Updates.pptx](https://microsoft-my.sharepoint.com/personal/sedorset_microsoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B4D198BF3-CC7D-4230-A2BF-A4420EAEF6F3%7D&file=GitHub%20Actions%20November%20Updates.pptx&action=edit&mobileredirect=true)
 
-The Office-generated deck contains 14 slides, speaker notes on every slide,
-a demoability scorecard, five selected updates, timed demo sections,
-50 minutes of presentation/demo and 10 minutes of Q&A.
+The Office-generated deck was revamped to cover only update #1 (workflow
+dependency lockfiles) and update #2 (GitHub Agentic Workflows), with speaker
+notes. The requested agenda is 5 minutes on #1, 40 minutes for a deep dive
+on #2, and the original 10 minutes of Q&A; the opening occupies the remaining
+5 minutes of the 60-minute session.
 
 Style chosen in PowerPoint: **Dark Canvas Purple Accents**.
 
@@ -25,10 +27,10 @@ Upload files. Keep speaker notes in that copy. The repository is private.
 ## Delivery cautions
 
 - Research window: October 4-November 2, 2026, not future announcements.
-- Live AI inference needs owner-supplied Copilot authentication and budget.
-- This private repository cannot prove the public-repository default block.
-- The session follows the November 9 brownout; the next is November 16,
-  16:00-18:00 UTC. Permanent enforcement is December 2.
-- The network workflow cannot force AWS placement or validate DXC's firewall.
+- The Agentic Workflows source and compiled workflow are committed in GitHub.
+- Live AI inference requires a valid, owner-supplied Copilot credential,
+  Copilot entitlement and budget.
+- GitHub currently reports no `COPILOT_GITHUB_TOKEN` secret in the demo
+  repository. The authenticated run has not yet been rehearsed successfully.
 - Use [the runbook](PRESENTER-RUNBOOK.md) for precise commands, caveats and
-  fallback handling. Use [rehearsal evidence](REHEARSAL.md) for actual outcomes.
+  fallback handling. Use [rehearsal evidence](REHEARSAL.md) for observed runs.
