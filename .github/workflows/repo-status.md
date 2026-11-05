@@ -31,11 +31,11 @@ Do not modify source files, open pull requests, add labels or mention users.
 The report must include:
 
 - The session date, November 10, 2026.
-- The selected updates: workflow dependency lockfiles, Agentic Workflows,
-  pull_request_target policy timing, multi-cloud compute and blob endpoints.
+- The selected updates only: workflow dependency lockfiles and GitHub Agentic
+  Workflows.
 - A distinction between actions.lock and the agent's compiled .lock.yml file.
-- A reminder that this repository is private and the announced default
-  pull_request_target block affects public repositories.
+- A reminder that this is a private synthetic demo repository and the report
+  must not imply that it represents production readiness.
 - Facts supported by repository content; clearly mark unknown readiness.
 
 Use the configured create-issue safe output once to publish the report.

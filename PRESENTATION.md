@@ -28,9 +28,10 @@ Upload files. Keep speaker notes in that copy. The repository is private.
 
 - Research window: October 4-November 2, 2026, not future announcements.
 - The Agentic Workflows source and compiled workflow are committed in GitHub.
-- Live AI inference requires a valid, owner-supplied Copilot credential,
-  Copilot entitlement and budget.
-- GitHub currently reports no `COPILOT_GITHUB_TOKEN` secret in the demo
-  repository. The authenticated run has not yet been rehearsed successfully.
+- GitHub confirms the repository secret name `COPILOT_GITHUB_TOKEN` is present;
+  its value was not accessed. Live AI inference still requires a valid
+  credential, Copilot entitlement and available budget, and must be confirmed
+  with an actual run.
+- The authenticated Agentic Workflow has not yet been rehearsed successfully.
 - Use [the runbook](PRESENTER-RUNBOOK.md) for precise commands, caveats and
   fallback handling. Use [rehearsal evidence](REHEARSAL.md) for observed runs.
