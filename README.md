@@ -62,10 +62,13 @@ revamped presentation.
 
 ## Agent authentication
 
-The Copilot engine requires a Copilot license. An owner must configure repository
-secret `COPILOT_GITHUB_TOKEN` through **Settings > Secrets and variables > Actions**,
-following the official
-[authentication instructions](https://github.github.com/gh-aw/setup/quick-start/).
+The Copilot engine requires a Copilot license. Create a fine-grained personal
+access token with the **Copilot Requests: Read** account permission; no
+repository-content permissions are required for that token. An owner must save
+it as the repository secret `COPILOT_GITHUB_TOKEN` through
+**Settings > Secrets and variables > Actions**. Follow the official
+[quickstart](https://github.github.com/gh-aw/setup/quick-start/) and
+[authentication reference](https://github.github.com/gh-aw/reference/auth/#github-copilot-default).
 Do not paste tokens into source, chat, logs or issues.
 
 The implementation uses the secret-based path. Organization-centralized Copilot

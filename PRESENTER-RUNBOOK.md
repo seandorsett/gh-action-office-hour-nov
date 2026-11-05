@@ -10,6 +10,10 @@ commit the files. Do not edit generated lockfiles by hand.
 Configure Copilot authentication in GitHub Settings, run preflight, and rehearse
 the agent. Keep a successful report issue and workflow run open as fallback.
 No inference has been demonstrated merely because compilation succeeded.
+For the secret-based path, use a fine-grained PAT with only the Copilot Requests:
+Read account permission and store it as repository secret
+`COPILOT_GITHUB_TOKEN`. Do not add repository-content permissions to that PAT or
+paste it into Chat. Confirm the repository secret is visible before launching.
 
 Recheck official announcements before November 10. The research window ends
 November 2, not the session day.
