@@ -29,8 +29,8 @@ and open the resulting run's **Summary** and job logs.
 |---|---|---|
 | 00 - Prepare generated demo files | Compile agent source and generate actions.lock; publish reviewed files as an artifact | Maintainer reviews and commits generated output before demos |
 | 01 - Workflow dependency lockfiles | Verify locked action provenance and detect controlled local dependency drift | Committed actions.lock |
-| 02 - Agentic workflow preflight | Fail clearly when Copilot credentials or compiled YAML are missing | `COPILOT_GITHUB_TOKEN` is configured; verify with preflight before dispatch |
-| Repo status office hour | Compile and run an agent that reads repository activity and requests one report issue via safe outputs | Compiled YAML, valid Copilot authentication, entitlement and AI budget; live inference rehearsal pending |
+| 02 - Agentic workflow preflight | Fail clearly when Copilot credentials or compiled YAML are missing | Passed on November 5, 2026; see [run 42130203122](https://github.com/seandorsett/gh-action-office-hour-nov/actions/runs/42130203122) |
+| Repo status office hour | Compile and run an agent that reads repository activity and requests one report issue via safe outputs | Live inference succeeded on November 5; see [run 42130308648](https://github.com/seandorsett/gh-action-office-hour-nov/actions/runs/42130308648) and [report issue #2](https://github.com/seandorsett/gh-action-office-hour-nov/issues/2) |
 | 03 - Safe event context | Inspect event metadata without checkout or secrets | Manual run works immediately; real PR comparison requires a PR |
 | 04 - Multi-cloud and blob readiness | Retrieve public Meta API data and publish a network-readiness summary | No custom secrets |
 

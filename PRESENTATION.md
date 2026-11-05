@@ -29,9 +29,11 @@ Upload files. Keep speaker notes in that copy. The repository is private.
 - Research window: October 4-November 2, 2026, not future announcements.
 - The Agentic Workflows source and compiled workflow are committed in GitHub.
 - GitHub confirms the repository secret name `COPILOT_GITHUB_TOKEN` is present;
-  its value was not accessed. Live AI inference still requires a valid
-  credential, Copilot entitlement and available budget, and must be confirmed
-  with an actual run.
-- The authenticated Agentic Workflow has not yet been rehearsed successfully.
+  its value was not accessed. Preflight passed and live inference succeeded on
+  November 5, 2026: [preflight](https://github.com/seandorsett/gh-action-office-hour-nov/actions/runs/42130203122),
+  [Agentic Workflow run](https://github.com/seandorsett/gh-action-office-hour-nov/actions/runs/42130308648),
+  and [generated report issue #2](https://github.com/seandorsett/gh-action-office-hour-nov/issues/2).
+- Live runs depend on a valid credential, Copilot entitlement and available
+  budget; check those again before the November 10 session.
 - Use [the runbook](PRESENTER-RUNBOOK.md) for precise commands, caveats and
   fallback handling. Use [rehearsal evidence](REHEARSAL.md) for observed runs.

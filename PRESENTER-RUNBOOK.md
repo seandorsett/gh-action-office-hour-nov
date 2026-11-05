@@ -7,9 +7,11 @@ selected workflows appear on the default branch. Run preparation when source
 frontmatter or action dependencies change; review its generated artifact and
 commit the files. Do not edit generated lockfiles by hand.
 
-Configure Copilot authentication in GitHub Settings, run preflight, and rehearse
-the agent. Keep a successful report issue and workflow run open as fallback.
-No inference has been demonstrated merely because compilation succeeded.
+The repository secret name `COPILOT_GITHUB_TOKEN` was confirmed on November 5.
+Preflight and live inference both succeeded that day; keep [the successful run](https://github.com/seandorsett/gh-action-office-hour-nov/actions/runs/42130308648)
+and [report issue #2](https://github.com/seandorsett/gh-action-office-hour-nov/issues/2)
+open as fallbacks. Recheck Copilot entitlement and budget before the session.
+Compilation alone is not evidence of inference.
 For the secret-based path, use a fine-grained PAT with only the Copilot Requests:
 Read account permission and store it as repository secret
 `COPILOT_GITHUB_TOKEN`. Do not add repository-content permissions to that PAT or
@@ -72,9 +74,10 @@ Show the report issue and compare its claims with repository evidence. The
 agent should distinguish this private repository from public-policy scope.
 Do not use production content to make the example more impressive.
 
-Fallback: if authentication is missing, show the explicit preflight failure
+Fallback: If authentication is unavailable on the day, show the explicit preflight failure
 and walk through source and compilation only. Label live inference unavailable,
-not a completed report. If rehearsal succeeded earlier, show the saved result.
+not a completed report. If a live run fails, show the saved successful result
+and explain its timestamp rather than claiming the new run succeeded.
 
 ## 50-60 minutes - Q&A
 
