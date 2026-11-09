@@ -14,15 +14,14 @@ Style chosen in PowerPoint: **Dark Canvas Purple Accents**.
 
 ## Persistence
 
-This repository currently preserves the canonical deck link, source-linked
-research, agenda, presenter runbook, workflow sources and rehearsal evidence.
-The editable deck itself is hosted in Microsoft 365; GitHub access does not
-grant access to that file. A binary PowerPoint copy has not yet been archived
-in this repository.
+The repository includes a copy at
+[slides/GitHub Actions November Updates.pptx](slides/GitHub%20Actions%20November%20Updates.pptx),
+alongside the canonical Microsoft 365 link above. The archived copy is
+Office-encrypted; opening it may require Microsoft 365 authorization. GitHub
+access alone does not grant access to the protected presentation.
 
-To keep a self-contained snapshot in GitHub, download a PowerPoint copy from
-PowerPoint's File menu and upload it to `slides/` using GitHub's Add file >
-Upload files. Keep speaker notes in that copy. The repository is private.
+The repository is private. Keep the SharePoint-hosted presentation as the
+editable canonical version and update the repository copy when it changes.
 
 ## Delivery cautions
 
