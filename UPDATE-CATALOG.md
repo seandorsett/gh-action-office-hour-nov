@@ -8,6 +8,9 @@ Session constraint: 60 minutes total. The revamped deck covers only updates
 1 and 2, with 5 minutes for update 1, 40 minutes for update 2, 10 minutes Q&A,
 and 5 minutes for opening. Demo feasibility below is an assessment, not evidence
 of a successfully executed agent inference.
+Only updates 1 and 2 have runnable demos retained in this repository.
+Proposed demonstrations for the other catalogue topics are research options,
+not part of the current presentation/demo package.
 
 ## Topic selection
 

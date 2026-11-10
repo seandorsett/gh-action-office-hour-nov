@@ -1,4 +1,0 @@
-Synthetic, documentation-only pull request for the November 10 office hour.
-No executable code, secrets or production configuration changes.
-Compare the pull_request merge ref with the pull_request_target base ref.
-Both handlers inspect allowlisted metadata without checking out PR content.
