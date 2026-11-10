@@ -21,9 +21,10 @@ The secret value was never read or exposed. A successful rehearsal does not
 guarantee future Copilot entitlement, budget or service availability. Never copy
 a CLI login token into the repository as a substitute.
 
-The issue-triage example in the presentation is illustrative and was not
-rehearsed as a runnable workflow. The live Agentic Workflow evidence above is
-for the repository-status report.
+The issue-triage workflow was added after the November 5 rehearsal. Its source
+and compiled workflow are available, but no successful live-inference run is
+recorded yet. The evidence above remains specific to the repository-status
+report.
 
 ## Live launch and fallbacks
 

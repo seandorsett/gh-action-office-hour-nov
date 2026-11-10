@@ -59,19 +59,23 @@ and 3 minutes on adoption lessons.
 Explain: Markdown instructions and frontmatter -> compile -> ordinary Actions
 YAML -> read-only agent -> validated, permission-controlled safe output.
 
-Show repo-status.md and repo-status.lock.yml. They differ from actions.lock.
-Launch **Repo status office hour** from Actions.
-Explain that this real workflow runs manually, reads the synthetic demo
-repository, gives the agent read-only access, and allows one report issue via
-a separate safe-output job. The compiled file exposes the job graph and pinned
-components for review; it is not the same as the actions.lock dependency file.
+Show issue-triage.md and issue-triage.lock.yml. They differ from actions.lock.
+Before the session, identify an open synthetic issue with no sensitive content.
+Launch **Issue triage office hour** from Actions and enter that issue number.
+Explain that the workflow validates and fetches only the selected issue, gives
+the agent a read-only issue record, and allows one separate triage report issue
+through a safe-output job. It does not comment on or change the source issue.
+The compiled file exposes the job graph and pinned components for review; it is
+not the same as the actions.lock dependency file.
 
 While waiting, discuss permissions, network containment, safe-output limits,
 authentication and AI budget. Instructions are not a security boundary by
 themselves; tools and permissions matter. AI output is variable.
 
-Show the report issue and compare its claims with repository evidence. The
-agent should distinguish this private repository from public-policy scope.
+Show the report issue and compare its claims with the selected source issue.
+The original issue should remain unchanged. The new workflow is compiled but
+has not yet been rehearsed with live inference; if it is unavailable, launch
+**Repo status office hour** and show the saved successful result.
 Do not use production content to make the example more impressive.
 
 Fallback: If authentication is unavailable on the day, show the explicit preflight failure

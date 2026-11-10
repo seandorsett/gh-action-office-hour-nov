@@ -17,7 +17,7 @@ jobs:
         run: |
           gh extension install github/gh-aw --pin v1.0.1
           gh extension install github/gh-actions-lock --pin v0.4.1
-      - name: Compile agent and lock demo action dependencies
+      - name: Compile agents and lock demo action dependencies
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -26,13 +26,14 @@ jobs:
           gh actions-lock --verify .github/workflows/01-lockfiles.yml
           mkdir -p .generated/.github/workflows
           cp .github/workflows/repo-status.lock.yml .generated/.github/workflows/
+          cp .github/workflows/issue-triage.lock.yml .generated/.github/workflows/
           cp .github/workflows/actions.lock .generated/.github/workflows/
           cp .github/workflows/01-lockfiles.yml .generated/.github/workflows/
           {
             echo '## Generated files ready for review'
             echo 'Review and commit the artifact files to the default branch before presenting.'
             echo 'No repository files were pushed by this preparation workflow.'
-            echo 'The agentic *.lock.yml is compiled YAML; actions.lock pins action dependencies. They are different mechanisms.'
+            echo 'Agentic *.lock.yml files are compiled YAML; actions.lock pins action dependencies. They are different mechanisms.'
           } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v7.0.2
         with:

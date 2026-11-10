@@ -18,23 +18,24 @@ or access production applications.
 
 ## Run the presentation demos
 
-Both demos run on GitHub-hosted runners from the repository's **Actions** tab:
+All demos run on GitHub-hosted runners from the repository's **Actions** tab:
 select the workflow, choose **Run workflow**, keep the default branch, then
 review the run summary and logs.
 
 | Presentation segment | Workflow | What it demonstrates |
 |---|---|---|
 | Workflow dependency lockfiles | **01 - Workflow dependency lockfiles** | Verifies the committed action lockfile and shows the verifier rejecting controlled, temporary dependency drift without changing the branch |
-| Agentic Workflows | **Repo status office hour** | Compiles and runs a read-only agent against repository activity, then requests one bounded report issue through a separate safe-output job |
+| Agentic Workflows | **Issue triage office hour** | Enter one open synthetic issue number; a read-only agent reviews only that issue and requests at most one separate triage report issue through a safe-output job. The source issue is not changed. |
+| Agentic Workflows (alternate) | **Repo status office hour** | Compiles and runs a read-only agent against repository activity, then requests one bounded report issue through a separate safe-output job |
 
-The issue-triage example shown in the presentation is illustrative only; it is
-not a runnable or rehearsed workflow in this repository. The rehearsed live
-Agentic Workflow is the repository-status report.
+Issue triage requires Copilot inference authentication and an open synthetic
+issue to select. It has been compiled but not yet rehearsed with live inference;
+use the repository-status report as the rehearsed fallback.
 
 ## Support workflows
 
 - **00 - Prepare generated demo files** is a maintainer utility for compiling
-  the Agentic Workflow and regenerating/verifying the action lockfile. Review
+  both Agentic Workflows and regenerating/verifying the action lockfile. Review
   its artifact and commit generated files before a presentation; it does not
   push changes.
 - **02 - Agentic workflow preflight** checks that the compiled workflow and
